@@ -1,5 +1,13 @@
 const carbonPerLitre = 2.3;
 var totalCarbon = 0;
+var litresUsedC = 0;
+var litresUsedM = 0;
+var litresUsedF = 0;
+var totalHouse = 0;
+var litresUsedB = 0;
+var litresUsedS = 0;
+var litresUsedG = 0;
+var averagesecondary = 0;
 
 function carEfficency() {
   var kmDriven = document.getElementById("car1").value;
@@ -16,7 +24,7 @@ function carEfficency() {
 
 function ani()
 {
-  document.getElementById()
+  
 }
 
 function motorbikeEfficency() {
@@ -59,7 +67,7 @@ function house(){
   totalHouse = (totalHouse*carbonPerLitre) / 1000;
   totalHouse = totalHouse.toFixed(3);
   document.getElementById('hsTtl').innerHTML = totalHouse;
-  totalCarbon = +totalCarbon + +totalHouse;
+
 }
 
 function numDays(numDays, energyConsumption) {
@@ -68,7 +76,22 @@ function numDays(numDays, energyConsumption) {
 
 function calculateTotal()
 {
+  console.log(document.getElementById("cb1").checked)
+  if(document.getElementById("cb1").checked == true)
+  {
+    totalCarbon = +totalCarbon + +totalHouse;
+  } else if(document.getElementById("cb1").checked == false && totalHouse!=0) {
+    totalCarbon = +totalCarbon - +totalHouse;
+  }
 
+   if(document.getElementById("cb2").checked == true)
+  {
+    totalCarbon = +totalCarbon + +totalHouse;
+  } else if(document.getElementById("cb2").checked == false && totalHouse!=0) {
+    totalCarbon = +totalCarbon - +totalHouse;
+  }
+  
+  document.getElementById("cbnttl").hidden = false
   document.getElementById('ttl').innerHTML = totalCarbon.toFixed(3);;
 }
 

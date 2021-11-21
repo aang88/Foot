@@ -139,15 +139,15 @@
     <button class = "btnCarbon" onclick="calculateTotal()">Calculate Total</button>
   </div>
 
-  <div id="cbnttl" class = "carbon-totals">
+  <div id="cbnttl" class = "carbon-totals" hidden>
       <h1>Total Carbon Footprint (in metric tons):</h1>
       <h1 id = "ttl" >0</h1>
       <div>
-        <input class = "boxes1" type="checkbox" value="Home" checked>Home</input>
-        <input class = "boxes1" type="checkbox" value="Flights"checked >Flights</input>
-        <input class = "boxes1" type="checkbox" value="Car"checked>Car</input>
-        <input class = "boxes1" type="checkbox" value="Transit"checked>Transit</input>
-        <input class = "boxes1" type="checkbox" value="Secondary"checked>Secondary</input>
+        <input id  = 'cb1' class = "boxes1" type="checkbox" value="Home" checked>Home</input>
+        <input id  = 'cb2' class = "boxes1" type="checkbox" value="Flights"checked >Flights</input>
+        <input id  = 'cb3' class = "boxes1" type="checkbox" value="Car"checked>Car</input>
+        <input id  = 'cb4' class = "boxes1" type="checkbox" value="Transit"checked>Transit</input>
+        <input id  = 'cb5' class = "boxes1" type="checkbox" value="Secondary"checked>Secondary</input>
       </div>
   </div>
 </html>
