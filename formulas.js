@@ -80,42 +80,42 @@ function calculateTotal()
   if(document.getElementById("cb1").checked == true)
   {
     totalCarbon = +totalCarbon + +totalHouse;
-  } else if(document.getElementById("cb1").checked == false && totalHouse!=0) {
+  } else if(document.getElementById("cb1").checked == false && document.getElementById('ttl').innerHTML>0) {
     totalCarbon = +totalCarbon - +totalHouse;
   }
 
    if(document.getElementById("cb2").checked == true)
   {
     totalCarbon = +totalCarbon + +litresUsedF;
-  } else if(document.getElementById("cb2").checked == false && litresUsedF!=0) {
+  } else if(document.getElementById("cb2").checked == false && document.getElementById('ttl').innerHTML>0) {
     totalCarbon = +totalCarbon - +litresUsedF;
   }
 
   if(document.getElementById("cb3").checked == true)
   {
     totalCarbon = +totalCarbon + +litresUsedC;
-  } else if(document.getElementById("cb3").checked == false && litresUsedC!=0) {
+  } else if(document.getElementById("cb3").checked == false && document.getElementById('ttl').innerHTML>0) {
     totalCarbon = +totalCarbon - +litresUsedC;
   }
 
   if(document.getElementById("cb4").checked == true)
   {
     totalCarbon = +totalCarbon + +litresUsedB + +litresUsedS  + +litresUsedG; 
-  } else if(document.getElementById("cb4").checked == false && litresUsedB!=0) {
+  } else if(document.getElementById("cb4").checked == false && document.getElementById('ttl').innerHTML>0) {
     totalCarbon = +totalCarbon - +litresUsedB - +litresUsedS  - +litresUsedG;
   }
 
    if(document.getElementById("cb5").checked == true)
   {
     totalCarbon = +totalCarbon + +averagesecondary; 
-  } else if(document.getElementById("cb5").checked == false && litresUsedC!=0) {
+  } else if(document.getElementById("cb5").checked == false && document.getElementById('ttl').innerHTML>0) {
     totalCarbon = +totalCarbon - +averagesecondary;
   }
 
     if(document.getElementById("cb6").checked == true)
   {
     totalCarbon = +totalCarbon + +litresUsedM; 
-  } else if(document.getElementById("cb6").checked == false && litresUsedM!=0) {
+  } else if(document.getElementById("cb6").checked == false && document.getElementById('ttl').innerHTML>0) {
     totalCarbon = +totalCarbon - +litresUsedM;
   }
 
