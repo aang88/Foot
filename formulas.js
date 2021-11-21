@@ -86,10 +86,26 @@ function calculateTotal()
 
    if(document.getElementById("cb2").checked == true)
   {
-    totalCarbon = +totalCarbon + +totalHouse;
-  } else if(document.getElementById("cb2").checked == false && totalHouse!=0) {
-    totalCarbon = +totalCarbon - +totalHouse;
+    totalCarbon = +totalCarbon + +litresUsedF;
+  } else if(document.getElementById("cb2").checked == false && litresUsedF!=0) {
+    totalCarbon = +totalCarbon - +litresUsedF;
   }
+
+  if(document.getElementById("cb3").checked == true)
+  {
+    totalCarbon = +totalCarbon + +litresUsedC;
+  } else if(document.getElementById("cb3").checked == false && litresUsedC!=0) {
+    totalCarbon = +totalCarbon - +litresUsedC;
+  }
+
+  if(document.getElementById("cb4").checked == true)
+  {
+    totalCarbon = +totalCarbon + +litresUsedB + +litresUsedS  + +litresUsedG; 
+  } else if(document.getElementById("cb4").checked == false && litresUsedC!=0) {
+    totalCarbon = +totalCarbon - +litresUsedB + +litresUsedS  + +litresUsedG;
+  }
+
+  
   
   document.getElementById("cbnttl").hidden = false
   document.getElementById('ttl').innerHTML = totalCarbon.toFixed(3);;
