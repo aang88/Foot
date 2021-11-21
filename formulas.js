@@ -76,53 +76,44 @@ function numDays(numDays, energyConsumption) {
 
 function calculateTotal()
 {
-  console.log(document.getElementById("cb1").checked)
-  if(document.getElementById("cb1").checked == true)
-  {
-    totalCarbon = +totalCarbon + +totalHouse;
-  } else if(document.getElementById("cb1").checked == false && document.getElementById('ttl').innerHTML>0) {
+  totalCarbon = 0;
+  totalCarbon = +totalCarbon + +totalHouse;
+  totalCarbon = +totalCarbon + +litresUsedF;
+  totalCarbon = +totalCarbon + +litresUsedC;
+  totalCarbon = +totalCarbon + +litresUsedB + +litresUsedS  + +litresUsedG
+  totalCarbon = +totalCarbon + +averagesecondary;
+  totalCarbon = +totalCarbon + +litresUsedM;
+
+
+
+ if(document.getElementById("cb1").checked == false) {
     totalCarbon = +totalCarbon - +totalHouse;
   }
 
-   if(document.getElementById("cb2").checked == true)
-  {
-    totalCarbon = +totalCarbon + +litresUsedF;
-  } else if(document.getElementById("cb2").checked == false && document.getElementById('ttl').innerHTML>0) {
+   if(document.getElementById("cb2").checked == false) {
     totalCarbon = +totalCarbon - +litresUsedF;
   }
 
-  if(document.getElementById("cb3").checked == true)
-  {
-    totalCarbon = +totalCarbon + +litresUsedC;
-  } else if(document.getElementById("cb3").checked == false && document.getElementById('ttl').innerHTML>0) {
+   if(document.getElementById("cb3").checked == false) {
     totalCarbon = +totalCarbon - +litresUsedC;
   }
 
-  if(document.getElementById("cb4").checked == true)
-  {
-    totalCarbon = +totalCarbon + +litresUsedB + +litresUsedS  + +litresUsedG; 
-  } else if(document.getElementById("cb4").checked == false && document.getElementById('ttl').innerHTML>0) {
+   if(document.getElementById("cb4").checked == false) {
     totalCarbon = +totalCarbon - +litresUsedB - +litresUsedS  - +litresUsedG;
   }
 
-   if(document.getElementById("cb5").checked == true)
-  {
-    totalCarbon = +totalCarbon + +averagesecondary; 
-  } else if(document.getElementById("cb5").checked == false && document.getElementById('ttl').innerHTML>0) {
+   if(document.getElementById("cb5").checked == false) {
     totalCarbon = +totalCarbon - +averagesecondary;
   }
 
-    if(document.getElementById("cb6").checked == true)
-  {
-    totalCarbon = +totalCarbon + +litresUsedM; 
-  } else if(document.getElementById("cb6").checked == false && document.getElementById('ttl').innerHTML>0) {
+  if(document.getElementById("cb6").checked == false) {
     totalCarbon = +totalCarbon - +litresUsedM;
   }
 
   
   
   document.getElementById("cbnttl").hidden = false
-  document.getElementById('ttl').innerHTML = totalCarbon.toFixed(3);;
+  document.getElementById('ttl').innerHTML = Math.abs(totalCarbon).toFixed(3);;
 }
 
 function secondaryEmissions(){
