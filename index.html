@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="tabs.js" defer></script>
+    <script src="formulas.js"></script>
+  </head>
+
+  <div class="title">
+    <h1 class = "logo">Footprint Formula<h1>
+    <p class = "desc">Calculate your Carbon Footprint</p>
+  </div>
+
+  <body>
+    <ul class = "tabs">
+      <li data-tab-target="#house" class="active tab">House</li>
+      <li data-tab-target="#flights" class="tab">Flights</li>
+      <li data-tab-target="#car" class="tab">Car</li>
+      <li data-tab-target="#motorbike" class="tab">Motorbike</li>
+      <li data-tab-target="#transit" class="tab">Transit</li>
+      <li data-tab-target="#second" class="tab">Secondary</li>
+    
+    </ul>
+  
+    <div class="tab-content">
+        <div id="house" data-tab-content class ="active">
+
+          <p class = "text">Your individual Carbon Footprint is calculated using your households total energy consumption divided by each family member (Enter Yearly Energy Consumption)</p>
+          <div>
+            <input id = "numMembers" class = "txtbox" type = "number" placeholder="Number of residents"/>
+          </div>
+          <div>
+            <input id = "electricityInput" class = "txtbox" type="number" placeholder="Enter electricity use in kWh"/>
+            <input id = "naturalGasInput" class = "txtbox" type="number" placeholder="Enter gas use in kWh"/>
+          </div>
+          <div>
+            <input id = "coalInput" class = "txtbox" type="number" placeholder="Enter coal use in kWh"/>
+            <input id = "heatingOil" class = "txtbox" type="number" placeholder="Enter heating oil use in kWh"/>
+          </div>
+          <div>
+            <button onclick="house()" class="btn" type="button">Calculate</button>
+          </div>
+          
+          <h class = "text">Total House Emissions (in metric tons of CO2):</h>
+           
+          <h class "text" id = "hsTtl">  0</h>
+        </div>
+    </div>
+    
+    
+    <div class="tab-content" >
+        <div id="flights" data-tab-content>
+          <p class = "text">The Carbon Footprint for flights is calculated by taking the distance of each flight multiplied by the average CO2 emissions per meters (Enter Yearly Consumption)</p>
+
+          <input class = "txtbox"  type="text" id="fli" placeholder="Enter distance flown (km)"/>
+
+          <div>
+            <button class="btn" type="button" onclick="flightEfficency()">Calculate</button>
+          </div>
+          <h class = "text" id="fhdr">Total Flights Emissions (in metric tons of CO2):</h>
+       
+           <h class "text" id = "fTtl"> 0</h>
+        </div>
+        
+    </div>
+
+    <div class="tab-content">
+        <div id="car" data-tab-content>
+          <p class = "text">The Carbon Footprint for vehicle is calculated by taking the distance of each vehicle multiplied by the CO2 emissions per meters depending on the type of vehicle and avg. number of people per trip (Enter Yearly Consumption)</p>
+
+          <input id = "car1" class = "txtbox"  type="text" placeholder="Enter distance driven"/>
+          <input id = "car2" class = "txtbox"  type="text" placeholder="Enter number of passengers"/>
+  
+          <div>
+            <button class="btn" type="button" onclick="carEfficency()">Calculate</button>
+          </div>
+          <h class = "text" id = "carlbl">Total Vehicle Emissions (in metric tons of CO2):</h>
+          
+           <h class "text" id = "carTtl">  0</h>
+          </div>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <div id="motorbike" data-tab-content>
+          <p class = "text">The Carbon Footprint for motorbikes are calculated by taking the distance of each vehicle multiplied by the CO2 emissions per meters depending on the type of vehicle and average number of people per trip(Enter Yearly Consumption)</p>
+
+          <input class = "txtbox"  type="text" placeholder="Enter distance driven" id = "mtrbike"/>
+          
+          <div>
+            <button class="btn" type="button" onclick="motorbikeEfficency()">Calculate</button>
+          </div>
+          <h class = "text" id = "motorbikeTotal">Total Motorbike Emissions (in metric tons of CO2):</h>
+         
+           <h class "text" id = "mTtl">  0</h>
+           </div>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <div id="transit" data-tab-content>
+          <p class = "text">The Carbon Footprint for transit is calculated by taking the distance of each ,method of transit multiplied by the CO2 emissions per meters depending on the type of vehicle and average number of people per trip(Enter Yearly Consumption)</p>
+          <div>
+             <input class = "boxes1" type="checkbox" value="Bus" id = "bus">Bus</input>
+             <input class = "boxes1" type="checkbox" value="Train" id = "subway">Subway</input>
+             <input class = "boxes1" type="checkbox" value="Uber" id = "go">GO Train</input>
+          </div>          
+          <input id = "transit1" class = "txtbox"  type="text" placeholder="Enter distance driven"/>
+          <div>
+            <button class="btn" type="button" onclick = transit()>Calculate</button>
+          </div>
+          <h class = "text">Total Transit Emissions (in metric tons of CO2):</h>
+           
+           <h class "text" id = "tTtl">  0</h>
+          </div>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <div id="second" data-tab-content>
+          <p>This tab includes all the miscellanious aspects of your life that contribute to carbon emissions. </p>
+
+          <input class = "txtbox" id="secid" type="text" placeholder="Enter average spending on miscellanious per year in $"/>
+
+          <div>
+            <button class="btn" type="button" onclick="secondaryEmissions()">Calculate</button>
+          </div>
+          <h class = "text">Total Secondary Emissions (in metric tons of CO2):</h>
+          <h class "text" id = "averagesecondary"> 0</h>
+
+        </div>
+    </div>
+  </body>
+
+  <div>
+    <button class = "btnCarbon" onclick="calculateTotal()">Calculate Total</button>
+  </div>
+
+  <div id="cbnttl" class = "carbon-totals">
+      <h1>Total Carbon Footprint (in metric tons):</h1>
+      <h1 id = "ttl" >0</h1>
+      <div>
+        <input class = "boxes1" type="checkbox" value="Home" checked>Home</input>
+        <input class = "boxes1" type="checkbox" value="Flights"checked >Flights</input>
+        <input class = "boxes1" type="checkbox" value="Car"checked>Car</input>
+        <input class = "boxes1" type="checkbox" value="Transit"checked>Transit</input>
+        <input class = "boxes1" type="checkbox" value="Secondary"checked>Secondary</input>
+      </div>
+  </div>
+</html>

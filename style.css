@@ -1,0 +1,183 @@
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.title{
+  animation: fadein 2s;
+}
+
+.Htextbox
+{
+  opacity: 0;
+}
+
+[data-tab-content]
+{
+  animation: fadein 2s;
+  font-size: 15px;
+  display:none;
+  background-color:rgba(0, 255, 0, 0.3);;
+  
+}
+.active[data-tab-content]
+{
+  display: block;
+  color:white;
+  font-size: 15px;
+  margin-left:40px;
+  margin-right:40px;
+}
+
+.txtbox
+{
+  margin-left:5px;
+  margin-right:5px;
+  margin-bottom:5px;
+  color: rgb(0, 0, 0);
+  background: #02B95C
+  border-width 25px;
+  border:none;  
+  
+}
+
+.text
+{
+  margin:20px;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.btn
+{
+  margin-top:5px;
+  cursor: pointer;
+  background: rgba(28, 121, 28, 0.308);;
+  margin-bottom:5px;
+  font-family:sans-serif;
+  color:white;
+  border-width: 0;
+}
+
+.btnCarbon
+{
+  margin-top:10px;
+  cursor: pointer;
+  background: rgba(28, 121, 28, 0.308);;
+  margin-bottom:5px;
+  font-family:sans-serif;
+  color:white;
+  border-width: 0;
+   animation-delay: 10s;
+  animation: fadein 2s
+}
+
+.btn:hover
+{
+  background-color: green;
+  font-weight: bold;
+}
+.foot
+{
+  width:50px;
+
+}
+
+.desc
+{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-top: -20px;
+  font-size: 15px;
+}
+
+.tabs
+{
+  animation: fadein 2s;
+  display: flex;
+  justify-content:space-around;
+  list-style-type: none;
+  margin:5;
+  padding:5;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid white
+}
+
+.tab
+{
+  cursor: pointer;
+  padding: 10px;
+}
+
+.tab:hover
+{
+  background-color: green;
+  transition: 0.5s ease-in-out;
+  font-weight: bold;
+}
+
+.tab.active{
+  background-color: green;
+  font-weight: bold;
+}
+
+.boxes
+{
+  margin-top:-20px;
+  margin: 10px;
+
+}
+
+.boxes1
+{
+  margin-top:-20px;
+  margin: 10px;
+
+}
+
+.carbon-totals
+{
+  margin-bottom:-10px;
+  animation:fadein 2s;
+}
+
+.carbon-totals:hover
+{
+  
+}
+
+
+
+.checkLabel
+{
+  margin:-20px;
+}
+
+body{
+
+  font-family: system-ui;
+  background:#02B95C;
+  color: white;
+  text-align:center;
+  list-style-type: none;
+  padding:0;
+  margin:0;
+}
+
+check {
+    display: table;
+    float: left;
+    margin-right: 15px;
+}
+label {
+    display: table-row;
+}
+#chk {
+    display: table-row;
+    width: 100%;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
