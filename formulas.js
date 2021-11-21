@@ -18,7 +18,7 @@ function carEfficency() {
   litresUsedC = (litresUsedC*carbonPerLitre)/1000
   litresUsedC = litresUsedC.toFixed(3);
   document.getElementById('carTtl').innerHTML =  litresUsedC;
-  totalCarbon = +totalCarbon+ +litresUsedC;
+
   // this is in KG, 2.3 is carbon per litre of fuel, divide by 1000 to convert to metric tonne
 }
 
@@ -34,7 +34,7 @@ function motorbikeEfficency() {
   litresUsedM = (litresUsedM*carbonPerLitre) / 1000;
   litresUsedM = litresUsedM.toFixed(3);
   document.getElementById("mTtl").innerHTML =  litresUsedM;
-  totalCarbon=+totalCarbon+ +litresUsedM;
+
 }
 
 // formula for calulating the amount of carbon used per km per flight
@@ -47,7 +47,7 @@ function flightEfficency() {
   document.getElementById('fTtl').innerHTML = litresUsedF;
   console.log(totalCarbon);
   console.log(litresUsedF);
-  totalCarbon =  +totalCarbon + +litresUsedF;
+
   console.log(totalCarbon);
 }
 
@@ -101,8 +101,22 @@ function calculateTotal()
   if(document.getElementById("cb4").checked == true)
   {
     totalCarbon = +totalCarbon + +litresUsedB + +litresUsedS  + +litresUsedG; 
-  } else if(document.getElementById("cb4").checked == false && litresUsedC!=0) {
-    totalCarbon = +totalCarbon - +litresUsedB + +litresUsedS  + +litresUsedG;
+  } else if(document.getElementById("cb4").checked == false && litresUsedB!=0) {
+    totalCarbon = +totalCarbon - +litresUsedB - +litresUsedS  - +litresUsedG;
+  }
+
+   if(document.getElementById("cb5").checked == true)
+  {
+    totalCarbon = +totalCarbon + +averagesecondary; 
+  } else if(document.getElementById("cb5").checked == false && litresUsedC!=0) {
+    totalCarbon = +totalCarbon - +averagesecondary;
+  }
+
+    if(document.getElementById("cb6").checked == true)
+  {
+    totalCarbon = +totalCarbon + +litresUsedM; 
+  } else if(document.getElementById("cb6").checked == false && litresUsedM!=0) {
+    totalCarbon = +totalCarbon - +litresUsedM;
   }
 
   
@@ -116,7 +130,7 @@ function secondaryEmissions(){
   var averagesecondary = secondary * (29240 / 111.82); // convert secondary by gram of carbon per dollar
   averagesecondary = averagesecondary / 1000000 // convert to tonne
   averagesecondary = averagesecondary.toFixed(3);
-  totalCarbon = +totalCarbon + +averagesecondary;
+
   document.getElementById('averagesecondary').innerHTML = averagesecondary;
 }
 
@@ -127,7 +141,7 @@ function transit() {
     litresUsedB = kmCommuted / x;
     litresUsedB = (litresUsedB*carbonPerLitre) / 1000;
     litresUsedB = litresUsedB.toFixed(3);
-    totalCarbon = +totalCarbon + +litresUsedB;
+
     document.getElementById("tTtl").innerHTML =  litresUsedB;
   }
   
@@ -137,7 +151,7 @@ function transit() {
     litresUsedS = kmCommuted / x;
     litresUsedS = (litresUsedS*carbonPerLitre) / 1000;
     litresUsedS = litresUsedS.toFixed(3);
-    totalCarbon =+totalCarbon+ +litresUsedS;
+
     document.getElementById("tTtl").innerHTML =  litresUsedS;
   }
   
@@ -147,7 +161,7 @@ function transit() {
     litresUsedG = kmCommuted / x;
     litresUsedG = (litresUsedG*carbonPerLitre) / 1000;
     litresUsedG = litresUsedG.toFixed(3);
-    totalCarbon =+totalCarbon + +litresUsedG;
+
     document.getElementById("tTtl").innerHTML =  litresUsedG;
   }
 }
